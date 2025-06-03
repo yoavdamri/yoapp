@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import moment from 'moment';
 import { lastValueFrom } from 'rxjs';
 
 @Component({
@@ -12,11 +11,22 @@ import { lastValueFrom } from 'rxjs';
 export class ContactComponent implements OnInit {
 
   constructor(private http: HttpClient) { }
-
   ngOnInit() {
-    const startDate = moment().subtract('minutes', 12).format('YYYY-MM-DD HH:mm:ss');// '2025-05-27 15:15:00';
-    const endDate = moment().format('YYYY-MM-DD HH:mm:ss');
-    const myURL = `https://monitoringapi.solaredge.com/site/1892524/powerDetails?meters=CONSUMPTION&startTime=${startDate}&endTime=${endDate}&api_key=LN4T1U86HLWSV31ICAFO20P8A6H03MTT`
+    // Get current date and subtract 12 minutes using native JavaScript
+    const endDate = new Date();
+    const startDate = new Date(endDate.getTime() - 12 * 60 * 1000); // 12 minutes ago
+
+    // Format dates for the API (YYYY-MM-DD HH:mm:ss)
+    const formatDate = (date: Date): string => {
+      return date.toISOString()
+        .split('.')[0]      // Remove milliseconds
+        .replace('T', ' ');  // Replace T with space
+    };
+
+    const formattedStartDate = formatDate(startDate);
+    const formattedEndDate = formatDate(endDate);
+
+    const myURL = `https://monitoringapi.solaredge.com/site/1892524/powerDetails?meters=CONSUMPTION&startTime=${formattedStartDate}&endTime=${formattedEndDate}&api_key=LN4T1U86HLWSV31ICAFO20P8A6H03MTT`;
     // const myURL = 'https://monitoringapi.solaredge.com/site/1892524/powerDetails?meters=CONSUMPTION&startTime=2025-05-27%2015%3A06%3A38&endTime=2025-05-27%2015%3A21%3A38&api_key=LN4T1U86HLWSV31ICAFO20P8A6H03MTT';
 
     // Make JSONP call
