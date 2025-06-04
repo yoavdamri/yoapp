@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YoApp - Solar Energy Monitoring</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 40px 0;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: white;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #f0f0f0;
+            margin-bottom: 30px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .feature-title {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .feature-description {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .cta-section {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: background 0.3s ease;
+            margin: 10px;
+        }
+
+        .cta-button:hover {
+            background: #45a049;
+        }
+
+        .cta-button.secondary {
+            background: #2196F3;
+        }
+
+        .cta-button.secondary:hover {
+            background: #1976D2;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌞 YoApp</h1>
+            <p class="subtitle">Solar Energy Monitoring & Management Platform</p>
+            <p style="color: #f0f0f0;">Real-time solar consumption tracking with Angular 17 & Firebase</p>
+        </header>
+
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3 class="feature-title">Real-time Monitoring</h3>
+                <p class="feature-description">
+                    Track your solar energy consumption in real-time with SolarEdge API integration. 
+                    Get instant updates every minute with auto-refresh functionality.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <h3 class="feature-title">Mobile Responsive</h3>
+                <p class="feature-description">
+                    Built with modern Angular 17 and responsive design. 
+                    Access your solar data seamlessly on any device - desktop, tablet, or mobile.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🔔</div>
+                <h3 class="feature-title">Smart Notifications</h3>
+                <p class="feature-description">
+                    Receive browser notifications for important consumption alerts. 
+                    Stay informed about your energy usage patterns instantly.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3 class="feature-title">Secure Authentication</h3>
+                <p class="feature-description">
+                    Firebase-powered authentication system with user registration, 
+                    login, and protected dashboard areas for personalized experiences.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3 class="feature-title">Fast Performance</h3>
+                <p class="feature-description">
+                    Built with Angular 17 standalone components, optimized for speed. 
+                    Includes CORS proxy support and fallback mock data for reliability.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🌐</div>
+                <h3 class="feature-title">API Integration</h3>
+                <p class="feature-description">
+                    Advanced API integration with JSONP support, error handling, 
+                    and multiple data fetching strategies for maximum reliability.
+                </p>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h2 style="color: white; margin-bottom: 20px;">Ready to Monitor Your Solar Energy?</h2>
+            <p style="color: #f0f0f0; margin-bottom: 30px;">
+                Experience the full Angular application with all features
+            </p>
+            <a href="http://localhost:4200/" class="cta-button">Launch Local App</a>
+            <a href="https://yoavdamri.github.io/yoapp/" class="cta-button secondary">View on GitHub Pages</a>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 YoApp - Solar Energy Monitoring Platform</p>
+            <p>Built with Angular 17, Firebase, and SolarEdge API</p>
+        </footer>
+    </div>
+
+    <script>
+        // Simple animation for feature cards
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.feature-card');
+            
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(card);
+            });
+        });
+
+        // Check if Angular app is running locally
+        function checkLocalApp() {
+            fetch('http://localhost:4200/')
+                .then(() => {
+                    document.querySelector('.cta-button').style.background = '#4CAF50';
+                    document.querySelector('.cta-button').innerHTML = '✅ Launch Local App (Running)';
+                })
+                .catch(() => {
+                    document.querySelector('.cta-button').style.background = '#ff6b6b';
+                    document.querySelector('.cta-button').innerHTML = '❌ Start Local App (Not Running)';
+                });
+        }
+
+        // Check local app status on page load
+        setTimeout(checkLocalApp, 1000);
+    </script>
+</body>
+</html>
