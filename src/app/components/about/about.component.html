@@ -1,0 +1,42 @@
+<div class="about-container">
+  <h1>About Our Service</h1>
+  
+  <div class="card">
+    <div class="card-header">
+      <h2>Current Consumption</h2>
+    </div>
+    <div class="card-body">
+      <div *ngIf="isLoading" class="loading-indicator">
+        <div class="spinner"></div>
+        <p>Loading consumption data...</p>
+      </div>
+      
+      <div *ngIf="!isLoading && error" class="error-message">
+        <p>Sorry, we couldn't fetch the consumption data. Please try again later.</p>
+        <button class="btn btn-primary" (click)="fetchConsumptionData()">Retry</button>
+      </div>
+        <div *ngIf="!isLoading && !error" class="consumption-data">
+        <h3>Current Power Consumption:</h3>
+        <div class="consumption-value">
+          <span>{{currentConsumption}} kW</span>
+        </div>
+        <p class="update-time">Last updated: {{getFormattedTime()}}</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="about-content">
+    <h2>Our Mission</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nunc vel ultrices tincidunt, 
+      nisl nunc aliquam nisi, eget aliquam nunc nisl eu nunc. Nulla facilisi. Donec euismod, nisl eget
+      ultricies ultricies, nisl nunc aliquam nisi, eget aliquam nunc nisl eu nunc.
+    </p>
+    
+    <h2>Our Team</h2>
+    <p>
+      Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
+      totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+    </p>
+  </div>
+</div>
